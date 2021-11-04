@@ -1,17 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <ion-title color="light">
+            Tableaux
+          </ion-title>
+        </ion-col>
+        <ion-col size="3">
+          <ion-title >
+            <ion-icon name="add" color="light" style="font-size: 25px;"></ion-icon>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+
+  <ion-list>
+    <ion-list-header>
+      Online
+    </ion-list-header>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="./avatar-poe.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Poe</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="./avatar-ben.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Ben</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <app-explore-container ></app-explore-container>
 </ion-content>

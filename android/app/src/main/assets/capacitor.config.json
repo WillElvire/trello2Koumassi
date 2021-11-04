@@ -1,0 +1,6 @@
+{
+	"appId": "com.trello.app",
+	"appName": "trelloApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
