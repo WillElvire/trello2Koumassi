@@ -1,0 +1,78 @@
+<ion-content>
+
+  <ion-icon name="close-circle" style="color:orange;font-size:30px;margin-left: 5%;margin-top:3%" (click)="Close()"></ion-icon>
+
+<div *ngIf="dishes.length>0">
+
+  <h3 class="ion-text-center">Commandes <ion-badge color="warning">{{ dishes.length }}</ion-badge></h3>
+
+  <div *ngFor="let item of dishes;let id=index">
+
+    <p style="font-weight: bold;margin-left: 8%;">{{ item.day|date }}</p>
+
+    <ion-card style="--background:orange;color:black;border-radius: 20px;" >
+
+      <ion-card-content>
+
+        <ion-row>
+
+          <ion-col size="10">
+
+            <h2 style="font-weight: bold;">{{ item.dishe_id }}</h2>
+
+            <p>
+
+              Quantité : X1
+
+            </p>
+
+          </ion-col>
+
+          <ion-col size="2">
+
+            <ion-icon name="fast-food-outline" style="font-size:40px;"></ion-icon>
+
+          </ion-col>
+
+        </ion-row>
+
+        <ion-button  fill="outline" (click)="addToCard(item.id,item.day,id)" color="light" ><ion-icon name="checkmark"  *ngIf="!loader"></ion-icon> <ion-spinner name="dots" *ngIf="loader"></ion-spinner></ion-button>
+
+        <ion-button fill="outline" color="light" (click)="Remove(id)"><ion-icon name="trash"></ion-icon></ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</div>
+
+<div *ngIf="dishes.length==0" class="ion-text-center" style="margin-top:30%">
+
+  <ion-icon name="sad-outline" style="font-size:90px;"></ion-icon>
+
+  <h1>Aucune Commande</h1>
+
+  <ion-icon name="fast-food-outline" style="font-size:60px;color:orange" ></ion-icon>
+
+  <ion-icon name="alert-circle" style="font-size:30px;"></ion-icon>
+
+  <br>
+
+  <ion-button *ngIf="button" (click)="Commande()"  shape="round" style="--background:orange;--color:black;font-weight: bold;" >voir mes commandes  <ion-icon name="eye" ></ion-icon> </ion-button>
+
+</div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border" *ngIf="dishes.length>0">
+
+  <ion-toolbar class="ion-text-center">
+
+   <!---  <ion-button *ngIf="!button" (click)="StoreDishes()" [disabled]="loader2" shape="round" style="--background:orange;--color:black;font-weight: bold;" >confirmer mes commandes  <ion-icon name="checkmark-circle" *ngIf="!loader2"></ion-icon> <ion-spinner *ngIf="loader2"></ion-spinner></ion-button> !--->
+    <ion-button *ngIf="button" (click)="Commande()"  shape="round" style="--background:orange;--color:black;font-weight: bold;" >voir mes commandes  <ion-icon name="eye" ></ion-icon> </ion-button>
+
+  </ion-toolbar>
+
+</ion-footer>

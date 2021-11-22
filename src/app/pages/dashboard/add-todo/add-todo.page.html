@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-buttons>
+    <ion-back-button defaultHref="/task"></ion-back-button>
+  </ion-buttons>
+
+  <h2 class="ion-text-center">Ajouter une tache</h2>
+  <form [formGroup]="todo">
+    <ion-card mode="ios">
+      <ion-card-content>
+        <input formControlName="name" type="text" placeholder="nom du projet" />
+
+        <ion-button type="button" mode="ios" (click)="addTodoDetail()">
+          Enregistrer
+          <ion-spinner *ngIf="show"></ion-spinner>
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

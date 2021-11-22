@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AccessGuardGuard } from './guards/access/access-guard.guard';
 
 const routes: Routes = [
   {
@@ -25,11 +26,28 @@ const routes: Routes = [
   },
   {
     path: 'task',
-    loadChildren: () => import('./pages/dashboard/task/task.module').then( m => m.TaskPageModule)
+    loadChildren: () => import('./pages/dashboard/task/task.module').then( m => m.TaskPageModule),
+    canActivate:[AccessGuardGuard]
   },
   {
     path: 'add-list',
-    loadChildren: () => import('./pages/dashboard/Adding/add-list/add-list.module').then( m => m.AddListPageModule)
+    loadChildren: () => import('./pages/dashboard/Adding/add-list/add-list.module').then( m => m.AddListPageModule),
+    canActivate:[AccessGuardGuard]
+  },
+  {
+    path: 'add-task',
+    loadChildren: () => import('./shared/task-modals/task-modals.module').then( m => m.TaskModalsPageModule),
+    canActivate:[AccessGuardGuard]
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () => import('./pages/dashboard/detail/detail.module').then( m => m.DetailPageModule),
+    canActivate:[AccessGuardGuard]
+  },
+  {
+    path: 'add-todo/:id',
+    loadChildren: () => import('./pages/dashboard/add-todo/add-todo.module').then( m => m.AddTodoPageModule),
+    canActivate:[AccessGuardGuard]
   }
 ];
 @NgModule({

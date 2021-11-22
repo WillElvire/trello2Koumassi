@@ -1,0 +1,16 @@
+<ion-content>
+  <ion-icon name="close-circle" style="color:orange;font-size:30px;margin-left: 5%;margin-top:3%" (click)="close()"></ion-icon>
+  <div class="ion-text-center code"  *ngIf="id!=0">
+   <qrcode  [qrdata]="id" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
+   <p style="color:orange;font-weight: bold;" > Merci de scanner le code QrCode afin de valider votre commande</p>
+  </div>
+  <div >
+
+    <div class="ion-text-center code"  *ngIf="numero">
+      <h1  class="ion-text-center" style="color:black;font-weight: bold;letter-spacing: 15px;margin-top: 20%;"> {{ numero }}</h1>
+      <p  style="color:orange;font-weight: bold;"> Merci de bien garder le numéro afin de valider votre commande</p>
+     </div>
+
+  </div>
+
+</ion-content>

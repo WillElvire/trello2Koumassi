@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-buttons>
+    <ion-back-button defaultHref="/task"></ion-back-button>
+  </ion-buttons>
+  <form [formGroup]="task" >
+    <h2 class="ion-text-center">Ajouter un projet</h2>
+    <ion-card style="margin-top: 15%;" mode="ios">
+      <ion-card-content>
+         <input formControlName="name"  type="text" placeholder="nom du projet" />
+         <textarea formControlName="description"  placeholder="description du projet"></textarea>
+         <label>Commence à : </label>
+         <input formControlName="begin_at"  type="date">
+         <label>Fini à :</label>
+         <input type="date" formControlName="end_at" >
+         <ion-button type="button" (click)="addNewTask()">
+           Enregistrer
+           <ion-spinner *ngIf="show"></ion-spinner>
+         </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+  </form>
+</ion-content>

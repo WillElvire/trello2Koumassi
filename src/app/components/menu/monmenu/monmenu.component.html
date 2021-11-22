@@ -1,0 +1,57 @@
+<ion-menu id="auth" contentId="main-content" type="overlay" mode="ios">
+
+  <ion-content class="ion-text-center">
+    <img src="/assets/icon/ciprel.png" width="200" height="50" style="margin-top:4%">
+    <ion-list id="inbox-list">
+      <ion-list-header>Menu</ion-list-header>
+      <!-- <ion-note>hi@ionicframework.com</ion-note> -->
+      <div>
+        <ion-menu-toggle auto-hide="true" >
+            <ion-item routerDirection="root" [routerLink]="['/compte']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="person"></ion-icon>
+              <ion-label>Mon Compte</ion-label>
+            </ion-item>
+            <ion-item  routerDirection="root" [routerLink]="['/menu']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="pizza"></ion-icon>
+              <ion-label>Menu</ion-label>
+            </ion-item>
+            <ion-item  routerDirection="root" [routerLink]="['/scanner']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="qr-code"></ion-icon>
+              <ion-label>Scanner </ion-label>
+            </ion-item>
+            <ion-item  routerDirection="root" [routerLink]="['/commande']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="cart"></ion-icon>
+              <ion-label>Commande en cours</ion-label>
+            </ion-item>
+            <ion-item  routerDirection="root" [routerLink]="['/historique']" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="archive"></ion-icon>
+              <ion-label>Mes Historiques</ion-label>
+            </ion-item>
+            <ion-item   routerDirection="root" routerLink="/slider" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="help"></ion-icon>
+              <ion-label>Aide</ion-label>
+            </ion-item>
+
+            <ion-item routerDirection="root" (click)="Logout()" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="log-out"></ion-icon>
+              <ion-label>Déconnexion</ion-label>
+            </ion-item>
+            <ion-item routerDirection="root" (click)="exit()" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon  slot="start" name="exit"></ion-icon>
+              <ion-label>Quitter</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+      </div>
+
+    </ion-list>
+    <ion-list id="labels-list">
+      <ion-list-header >Futurafric IA</ion-list-header>
+      <ion-item  lines="none">
+        <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+        <a href="http://www.futurafric.com" style="text-decoration:none;color:black">Nous contacter</a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>

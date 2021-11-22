@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-icon name="close-circle" style="color:orange;font-size:30px;margin-left: 5%;margin-top:3%" (click)="close()"></ion-icon>
+
+<div class="container">
+  <div class="wrapper">
+   <div class="title_area ion-text-center">
+      <h3>Editer mon Profil</h3>
+   </div>
+   <div class="card-area">
+         <div class="content-wrap">
+          <form  method="post" [formGroup]='form'  (submit)="validate()">
+             <div class="input-area">
+                   <div class="input-with-icon">
+                     <ion-icon  name="person"></ion-icon>
+                     <input formControlName="firstname" type="text" mode="ios"  placeholder="nom"  value="{{data.firstname}}" >
+                   </div>
+                   <div class="input-with-icon">
+                    <ion-icon  name="person"></ion-icon>
+                    <input formControlName="lastname" type="text" mode="ios"  placeholder="prenom" value="{{data.lastname}}"  >
+                  </div>
+                  <div class="input-with-icon">
+                    <ion-icon  name="mail"></ion-icon>
+                    <input  formControlName="email" type="email" mode="ios"  placeholder="email"   value="{{data.email}}">
+                  </div>
+                  <div class="input-with-icon">
+                    <ion-icon  name="call"></ion-icon>
+                    <input formControlName="phone" type="text" mode="ios"  placeholder="téléphone"   value="{{data.phone}}">
+                  </div>
+                   <div class="input-with-icon" style="opacity: 0;">
+                     <ion-icon name="key"></ion-icon>
+                     <input type="password"  placeholder="password "  >
+                   </div>
+             </div>
+             <div class="btn-area">
+               <!--<ion-button shape="round" mode="ios" routerLink="/paiement" expand="full">Connexion</ion-button>!-->
+               <ion-button  mode="ios" type="submit" expand="full" style="border-radius: 8%;">
+                 <span *ngIf="!loader">modifier mes informations</span>
+                 <ion-spinner name="lines-small" *ngIf="loader"></ion-spinner>
+               </ion-button>
+
+             </div>
+           </form>
+         </div>
+   </div>
+
+  </div>
+</div>
+
+</ion-content>

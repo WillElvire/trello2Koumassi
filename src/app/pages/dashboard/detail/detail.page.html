@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons>
+      <ion-back-button defaultHref="/task"></ion-back-button>
+    </ion-buttons>
+    <ion-title mode="ios">
+      Détail Projet  {{ id }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of  todo" mode="ios">
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+    Nom de la tache :<b>{{ item.name }}</b>
+    <p>Crée le : {{ item.created_at |date }}</p>
+    </ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="9"></ion-col>
+        <ion-col size="3">
+          <ion-badge color="danger" *ngIf="!item.status"> en cours</ion-badge>
+          <ion-badge color="success" *ngIf="item.status"> terminé</ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

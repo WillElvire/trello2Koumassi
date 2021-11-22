@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-icon name="close-circle" style="color:orange;font-size:30px;margin-left: 5%;margin-top:3%" (click)="close()"></ion-icon>
+<div class="container">
+  <div class="wrapper">
+   <div class="title_area ion-text-center">
+      <h3>Valider une commande</h3>
+   </div>
+   <div class="card-area">
+         <div class="content-wrap">
+          <form>
+
+             <div class="input-area">
+                   <div class="input-with-icon">
+                     <ion-icon  name="key"></ion-icon>
+                     <input id="code"  type="text" mode="ios"  placeholder="entrez le code"  >
+                   </div>
+             </div>
+             <div class="btn-area">
+               <!--<ion-button shape="round" mode="ios" routerLink="/paiement" expand="full">Connexion</ion-button>!-->
+               <ion-button  mode="ios" (click)="validate()" expand="full" style="border-radius: 8%;">
+                <div>Valider la commande</div>
+
+              </ion-button>
+             </div>
+           </form>
+         </div>
+   </div>
+
+  </div>
+</div>
+
+</ion-content>

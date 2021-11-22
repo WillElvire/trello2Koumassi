@@ -9,7 +9,7 @@
                 <ion-icon name="close"></ion-icon>
               </ion-col>
               <ion-col size="10">
-                <ion-title>Project </ion-title>
+                <ion-title>Mes projets <ion-badge>{{ task.length }}</ion-badge></ion-title>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -24,7 +24,7 @@
                 <ion-icon name="notifications-outline"></ion-icon>
               </ion-col>
               <ion-col size="4">
-                <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                <ion-icon name="log-out" (click)="logout()"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -35,16 +35,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides>
-
-    <ion-slide>
-
+  <ion-slides  >
+    <ion-slide *ngFor="let item of task ">
       <ion-card style="margin-top: 10%"  mode="ios">
-        <ion-header>
+        <ion-header  routerLink="/detail/{{ item.id }}">
           <ion-grid>
             <ion-row>
               <ion-col size="4">
-                <b>A faire</b>
+                <b>{{ item.name }}</b>
               </ion-col>
               <ion-col size="8">
                 <ion-icon
@@ -56,48 +54,19 @@
           </ion-grid>
         </ion-header>
         <ion-card-content>
-          <p>création de site</p>
+          <p>{{ item.description }}</p>
           <hr />
           <div>
             <ion-card style="margin-left: -1%"  mode="ios">
-              <ion-card-content> dkdkd </ion-card-content>
+              <ion-card-content> {{ item.cost }} </ion-card-content>
             </ion-card>
-            <div><ion-icon name="add"></ion-icon> Ajouter une carte</div>
+            <ion-button shape="round" routerLink="/add-todo/{{ item.id}}" color="dark"><ion-icon name="add"></ion-icon> Ajouter une carte</ion-button>
           </div>
         </ion-card-content>
       </ion-card>
     </ion-slide>
     <ion-slide>
-      <ion-card style="margin-top: 10%" mode="ios">
-        <ion-header>
-          <ion-grid>
-            <ion-row>
-              <ion-col size="4">
-                <b>A faire</b>
-              </ion-col>
-              <ion-col size="8">
-                <ion-icon
-                  name="ellipsis-horizontal-outline"
-                  style="margin-left: 75%"
-                ></ion-icon>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-header>
-        <ion-card-content>
-          <p>création de site</p>
-          <hr />
-          <div>
-            <ion-card style="margin-left: -1%" mode="ios">
-              <ion-card-content> dkdkd </ion-card-content>
-            </ion-card>
-            <div><ion-icon name="add"></ion-icon> Ajouter une carte</div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-button mode="ios" expand="full"  style="margin-top: 15%;width: 90%;--background:rgba(0,0,0,0.2);" shape="round" routerLink="/tabs/tab1">Ajouter une liste</ion-button>
+      <ion-button mode="ios" expand="full"  style="margin-top: 15%;width: 90%;--background:rgba(0,0,0,0.2);" shape="round" (click)="AddProjet()">Ajouter un Projet</ion-button>
     </ion-slide>
   </ion-slides>
 </ion-content>

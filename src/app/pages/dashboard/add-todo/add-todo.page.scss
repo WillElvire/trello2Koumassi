@@ -1,0 +1,47 @@
+ion-content {
+  --ion-background-color: orange;
+  .design{
+    width: 100%;
+    height: 15vh;
+    background-color: white;
+    border-bottom-left-radius: 55% ;
+    border-bottom-right-radius: 55% ;
+    border-bottom: 7px solid black;
+  }
+
+  h2 {
+    font-size: 30px;
+    color:white;
+  }
+
+  ion-card{
+    --ion-background-color: white;
+
+    input{
+      height: 7vh;
+      width: 90%;
+      margin: 10px;
+      border-radius: 20px;
+      outline: none;
+      border: 2px solid orange;
+
+    }
+
+    textarea{
+      height: 7vh;
+      width: 90%;
+      margin: 10px;
+      border-radius: 20px;
+      outline: none;
+      border: 2px solid orange;
+
+    }
+  }
+
+
+  ion-button{
+    width: 90%;
+    --border-radius: 50px;
+    margin-top: 10%;
+  }
+}
