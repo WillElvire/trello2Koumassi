@@ -66,12 +66,12 @@ export class RegisterPage implements OnInit {
 
   InformationLooker() {
 
-    const username = this.Looker._getValue(this.Form, 'username');
+    const email = this.Looker._getValue(this.Form, 'email');
 
     const password = this.Looker._getValue(this.Form, 'password');
 
     const payload = {
-        username: username,
+        email: email,
         password: password
     }
 
